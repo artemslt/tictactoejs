@@ -14,7 +14,7 @@ const DEBOUNCE_DELAY = 300;
 refs.input.addEventListener('input', debounce(searchCountries, DEBOUNCE_DELAY));
 
 function searchCountries(evt) {
-  const searchName = evt.target.value;
+  const searchName = evt.target.value.trim().toLowerCase();
   fetchCounties(searchName)
     .then(countries => {
       if (countries.length > 10) {
