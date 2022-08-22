@@ -33,24 +33,20 @@ function searchCountries(evt) {
 }
 
 function markupList(data) {
-  return data
-    .map(
-      ({ name, flags }) =>
-        `<li><img src="${flags.svg}" alt="${name.official}" width="40" >${name.official}</li>`
-    )
-    .join('');
+  return data.reduce((acc, { name, flags }) => {
+    return (acc += `<li><img src="${flags.svg}" alt="${name.official}" width="40" >${name.official}</li>`);
+  }, '');
 }
 
 function oneCountryMarkup(data) {
-  return data.map(
-    ({ name, capital, population, flags, languages }) =>
-      `<h1><img src="${flags.svg}" alt="${name.official}" width="60" >${
-        name.official
-      }</h1>
+  return data.reduce((acc, { name, capital, population, flags, languages }) => {
+    return (acc += `<h1><img src="${flags.svg}" alt="${
+      name.official
+    }" width="60" >${name.official}</h1>
       <p>Capital: ${capital}</p>
       <p>Population: ${population}</p>
-      <p>Languages: ${Object.values(languages)}</p>`
-  );
+      <p>Languages: ${Object.values(languages)}</p>`);
+  }, '');
 }
 
 function markupGeneration(data) {
