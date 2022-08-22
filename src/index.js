@@ -1,5 +1,5 @@
 import fetchCounties from './api/fetchCountries';
-import markupList from './tamplates/markuplist';
+import markupList from './tamplates/markupList';
 import oneCountryMarkup from './tamplates/oneCountryMarkup';
 import './css/styles.css';
 import debounce from 'lodash.debounce';
