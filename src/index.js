@@ -36,7 +36,7 @@ function markupList(data) {
   return data
     .map(
       ({ name, flags }) =>
-        `<li><img src="${flags.png}" alt="${name.official}" width="40" >${name.official}</li>`
+        `<li><img src="${flags.svg}" alt="${name.official}" width="40" >${name.official}</li>`
     )
     .join('');
 }
