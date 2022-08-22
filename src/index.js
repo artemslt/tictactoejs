@@ -1,4 +1,6 @@
-import fetchCounties from './fetchCountries';
+import fetchCounties from './api/fetchCountries';
+import markupList from './tamplates/markuplist';
+import oneCountryMarkup from './tamplates/oneCountryMarkup';
 import './css/styles.css';
 import debounce from 'lodash.debounce';
 import Notiflix from 'notiflix';
@@ -28,25 +30,8 @@ function searchCountries(evt) {
     })
     .catch(err => {
       cleanMarkup();
-      Notiflix.Notify.failure('Oops, there is no country with that name');
+      Notiflix.Notify.failure(err);
     });
-}
-
-function markupList(data) {
-  return data.reduce((acc, { name, flags }) => {
-    return (acc += `<li><img src="${flags.svg}" alt="${name.official}" width="40" >${name.official}</li>`);
-  }, '');
-}
-
-function oneCountryMarkup(data) {
-  return data.reduce((acc, { name, capital, population, flags, languages }) => {
-    return (acc += `<h1><img src="${flags.svg}" alt="${
-      name.official
-    }" width="60" >${name.official}</h1>
-      <p>Capital: ${capital}</p>
-      <p>Population: ${population}</p>
-      <p>Languages: ${Object.values(languages)}</p>`);
-  }, '');
 }
 
 function markupGeneration(data) {
