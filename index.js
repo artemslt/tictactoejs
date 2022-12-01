@@ -65,13 +65,15 @@ function handleCellClick(clickedCellEvent) {
 
   handleCellPlayed(clickedCell, clickedCellIndex);
   handleResultValidation();
+  clickedCell.removeEventListener('click', handleCellClick);
 }
 
 function handleCellPlayed(clickedCell, clickedCellIndex) {
   gameState[clickedCellIndex] = currentPlayer;
   clickedCell.innerHTML = currentPlayer;
+  clickedCell.ive;
 }
-
+removeEventListener;
 const winningConditions = [
   [0, 1, 2],
   [3, 4, 5],
@@ -130,4 +132,7 @@ function handleRestartGame() {
   gameState = ['', '', '', '', '', '', '', '', ''];
   statusDisplay.innerHTML = currentPlayerTurn();
   document.querySelectorAll('.cell').forEach(cell => (cell.innerHTML = ''));
+  document
+    .querySelectorAll('.cell')
+    .forEach(cell => cell.addEventListener('click', handleCellClick));
 }
