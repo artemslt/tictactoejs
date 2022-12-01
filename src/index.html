@@ -2,15 +2,52 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homework 10</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="./index.css" />
+    <script type="module" src="./index.js"></script>
   </head>
   <body>
-    <input type="text" id="search-box" />
-    <ul class="country-list"></ul>
-    <div class="country-info"></div>
+    <section>
+      <h1 class="game--title">Tic Tac Toe</h1>
 
-    <script src="index.js" type="module"></script>
+      <div class="wrapper">
+        <div class="leftPart">
+          <form class="name--form">
+            <h2>Chose players</h2>
+            <label class="xPlayerInput">
+              Player X
+              <input class="x--player--name" type="text" name="xPlayer" />
+            </label>
+            <label class="oPlayerInput">
+              Player O
+              <input class="o--player--name" type="text" name="oPlayer" />
+            </label>
+            <button type="submit">submit</button>
+          </form>
+
+          <h2 class="game--status"></h2>
+          <button class="game--restart">Restart Game</button>
+        </div>
+        <div class="game--container">
+          <div data-cell-index="0" class="cell"></div>
+          <div data-cell-index="1" class="cell"></div>
+          <div data-cell-index="2" class="cell"></div>
+          <div data-cell-index="3" class="cell"></div>
+          <div data-cell-index="4" class="cell"></div>
+          <div data-cell-index="5" class="cell"></div>
+          <div data-cell-index="6" class="cell"></div>
+          <div data-cell-index="7" class="cell"></div>
+          <div data-cell-index="8" class="cell"></div>
+        </div>
+
+        <div>
+          <h2>Statistic</h2>
+          <p class="x--statistic"></p>
+          <p class="o--statistic"></p>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
